@@ -6,5 +6,7 @@
 3: Controller:
 
 3.1: getAllProduct(): Lấy tất cả các sản phẩm có trong CSDL và hiển thị trên Products html :Đủ
+
 3.2: add() và edit(): Chuyển hướng tới trang thêm ( hoặc sửa sản phẩm) bằng method Get và thực hiện thêm/ sửa sản phẩm và cập nhật vào CSDL bằng method Post : Phượng
+
 3.3: delete(): Chuyển hướng tới trang xóa sản phẩm bằng method Get và thực hiện xóa sản phẩm và cập nhật vào CSDL bằng method Post: Chiến
