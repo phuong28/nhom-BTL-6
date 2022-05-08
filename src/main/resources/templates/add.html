@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add products</title>
+</head>
+<body>
+<h1>Add Product</h1>
+<form action="#" method="post" th:object="${product}" style="display: flex; flex-direction: column; gap:10px; align-items: start">
+    <div>
+        <label for="code">Product Code:</label>
+        <input type="text" id="code" th:field="*{code}"/>
+    </div>
+    <div>
+        <label for="description">Product Description:</label>
+        <input type="text" id="description" th:field="*{description}"/>
+    </div>
+    <div>
+        <label for="price">Product Price:</label>
+        <input type="text" id="price" th:field="*{price}"/>
+    </div>
+    <div th:if="${error} != null" th:text="${error}" style="color: red"/>
+
+    <th:block th:switch="${action}">
+        <button th:case="edit" type="submit" th:formaction="@{/products/edit(productCode=${product.code})}">Update Product</button>
+        <button th:case="add" type="submit" th:formaction="@{/products/add}">Add Product</button>
+    </th:block>
+</form>
+<a style="margin-top: 20px" href="@{/products}">View Products</a>
+</body>
+</html>
